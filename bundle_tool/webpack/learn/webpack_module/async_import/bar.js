@@ -1,0 +1,4 @@
+
+const bar = () => {}
+
+import('./foo')
