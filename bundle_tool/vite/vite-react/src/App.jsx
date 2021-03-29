@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Redirect, Route, Switch, Link } from "react-ro
 import Home from "./pages/Home";
 import PrintPage from "./pages/PrintPage";
 import { ThemeContext } from "./context";
-import "./App.css";
+import "./App.scss";
 import "antd/dist/antd.css";
 
 function App() {

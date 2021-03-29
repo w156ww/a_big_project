@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Button } from "antd";
 import PrintComp from "../../component/PrintComp";
 import TempTable from "./TempTable";
-import "./index.css";
+import "./index.scss";
 const dataSource = [
     {
         key: "1",

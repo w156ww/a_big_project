@@ -1,6 +1,6 @@
 import React from "react";
 import { Table } from "antd";
-import "./index.css";
+import "./index.scss";
 
 const PrintComp = () => {
     const dataSource = [
