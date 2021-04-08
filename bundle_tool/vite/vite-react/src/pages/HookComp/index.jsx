@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import { Button } from "antd";
 import { Link } from "react-router-dom";
 import CustomComp from "./CustomHook";
+import MemoComp from "./MemoComp";
 
 const HookComp = () => {
     const [comp, setComp] = useState("");
-    const buttonList = [{ name: "CustomHook", id: "CustomHook" }];
+    const buttonList = [
+        { name: "blank", id: "blank" },
+        { name: "CustomHook", id: "CustomHook" },
+        { name: "MemoComp", id: "MemoComp" },
+    ];
 
     const handleClick = (item) => {
         setComp(item.id);
@@ -15,6 +20,9 @@ const HookComp = () => {
         switch (comp) {
             case "CustomHook": {
                 return <CustomComp />;
+            }
+            case "MemoComp": {
+                return <MemoComp />;
             }
             default: {
                 return null;

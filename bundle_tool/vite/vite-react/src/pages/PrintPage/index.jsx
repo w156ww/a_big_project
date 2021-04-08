@@ -4,45 +4,23 @@ import { Button } from "antd";
 import PrintComp from "../../component/PrintComp";
 import TempTable from "./TempTable";
 import "./index.scss";
-const dataSource = [
-    {
-        key: "1",
+const dataSource = [];
+for (let i = 0; i < 100; i++) {
+    dataSource.push({
+        key: i.toString(),
         name: "胡彦斌",
-        age: 32,
+        age: 32 + i,
         address: "西湖区湖底公园1号",
-    },
-    {
-        key: "2",
-        name: "胡彦祖",
-        age: 42,
-        address: "西湖区湖底公园1号",
-    },
-];
-
-const columns = [
-    {
-        title: "姓名",
-        dataIndex: "name",
-        key: "name",
-    },
-    {
-        title: "年龄",
-        dataIndex: "age",
-        key: "age",
-    },
-    {
-        title: "住址",
-        dataIndex: "address",
-        key: "address",
-    },
-];
+    });
+}
 const PrintPage = () => {
     const [visible, setVisible] = useState(true);
+    const [page, setPage] = useState([1]);
     let iframe = null;
     const handlePrint = () => {
         setVisible(false);
         setTimeout(() => {
-            window.print();
+            // window.print();
         });
     };
     const handleBeforePrint = (e) => {
@@ -107,7 +85,11 @@ const PrintPage = () => {
             </section>
             <Button onClick={handlePrint}>方法一：打印界面</Button>
             <Button onClick={handlePrintTwo}>方法二：打印界面</Button>
-            {visible ? null : <PrintComp></PrintComp>}
+            {visible
+                ? null
+                : page.map((item) => {
+                      return <PrintComp dataSource={dataSource}></PrintComp>;
+                  })}
         </div>
     );
 };
