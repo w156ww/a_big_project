@@ -1,0 +1,13 @@
+
+
+// .home > *:not(.yes) {
+//     color: red;
+// }
+
+// section.yes {
+//     color: black;
+// }
+*:not(.yes *) {
+    color: red;
+    border: 1px solid #000;
+}
